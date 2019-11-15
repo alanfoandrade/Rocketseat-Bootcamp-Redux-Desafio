@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Main() {
+export default function Cart() {
   return <Container />;
 }
 
-Main.navigationOptions = {
-  title: 'Main',
+Cart.navigationOptions = {
+  title: 'Cart',
 };

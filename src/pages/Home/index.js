@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export default function Main() {
+export default function Home() {
   return <Container />;
 }
 
-Main.navigationOptions = {
-  title: 'User',
+Home.navigationOptions = {
+  title: 'Home',
 };
