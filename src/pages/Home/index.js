@@ -42,11 +42,9 @@ class Home extends Component {
   };
 
   handleAddToCart = id => {
-    const { addToCartRequest, navigation } = this.props;
+    const { addToCartRequest } = this.props;
 
     addToCartRequest(id);
-
-    navigation.navigate('Cart');
   };
 
   renderProduct = ({ item }) => {
