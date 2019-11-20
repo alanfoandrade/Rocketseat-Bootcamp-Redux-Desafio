@@ -41,10 +41,10 @@ class Home extends Component {
     this.setState({ products: data });
   };
 
-  handleAddToCart = item => {
-    const { addToCart, navigation } = this.props;
+  handleAddToCart = id => {
+    const { addToCartRequest, navigation } = this.props;
 
-    addToCart(item);
+    addToCartRequest(id);
 
     navigation.navigate('Cart');
   };
@@ -57,7 +57,7 @@ class Home extends Component {
         <ProductImg source={{ uri: item.image }} />
         <ProductTitle>{item.title}</ProductTitle>
         <ProductValue>{item.priceFormatted}</ProductValue>
-        <AddToCartButton onPress={() => this.handleAddToCart(item)}>
+        <AddToCartButton onPress={() => this.handleAddToCart(item.id)}>
           <ProductAmount>
             <Icon name="add-shopping-cart" size={17} color="#fff" />
             <ProductAmountText>{cartItems[item.id] || 0}</ProductAmountText>
@@ -85,7 +85,7 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  addToCart: PropTypes.func.isRequired,
+  addToCartRequest: PropTypes.func.isRequired,
   cartItems: PropTypes.shape().isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func,

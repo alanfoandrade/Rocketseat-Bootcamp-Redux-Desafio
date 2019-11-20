@@ -120,7 +120,7 @@ export const EmptyCart = styled.View`
 export const EmptyText = styled.Text`
   font-weight: bold;
   font-size: 20px;
-  margin-top: 20px;
+  margin: 20px 0;
 `;
 
 export const GoShoppingButton = styled.TouchableOpacity`

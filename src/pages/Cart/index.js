@@ -36,13 +36,19 @@ import {
   GoShoppingButtonText,
 } from './styles';
 
-function Cart({ navigation, products, total, removeFromCart, updateAmount }) {
+function Cart({
+  navigation,
+  products,
+  total,
+  removeFromCart,
+  updateAmountRequest,
+}) {
   function increment(product) {
-    updateAmount(product.id, product.amount + 1);
+    updateAmountRequest(product.id, product.amount + 1);
   }
 
   function decrement(product) {
-    updateAmount(product.id, product.amount - 1);
+    updateAmountRequest(product.id, product.amount - 1);
   }
 
   return (
@@ -118,7 +124,7 @@ Cart.propTypes = {
     navigate: PropTypes.func,
   }).isRequired,
   removeFromCart: PropTypes.func.isRequired,
-  updateAmount: PropTypes.func.isRequired,
+  updateAmountRequest: PropTypes.func.isRequired,
   total: PropTypes.string.isRequired,
   products: PropTypes.arrayOf(PropTypes.shape()).isRequired,
 };
