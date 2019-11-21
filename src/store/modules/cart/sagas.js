@@ -24,6 +24,8 @@ function* addToCart({ id }) {
 
   if (itemExists) {
     yield put(updateAmountSuccess(id, amount));
+
+    NavigationService.navigate('Cart');
   } else {
     const data = {
       ...response.data,
